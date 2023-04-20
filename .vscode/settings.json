@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/680f7d6f-7cf3-4980-ab6f-38c4e22efc41/resourceGroups/Z-DE-KC-SAFELINK-PRD-RG/providers/Microsoft.Web/sites/desafelinkprdapp1",
+    "appService.deploySubpath": "."
+}
