@@ -1,136 +1,80 @@
-<HTML>
-	<HEAD>
-		<TITLE> Doosan Safelink </TITLE>
-	</HEAD>
-	<style>
-		body{
-			margin:0;
-			padding:0;
-			background:#fff;
-			font-family: Arial, Helvetica, sans-serif;
-			color:#666;
-		}
-		#error_wrap{
-			text-align:left;
-			width:930px;
-			margin:30px 135px;
-			padding:15px 0px 15px 15px;
-			border-top:1px solid #C7C6FF;
-			border-left:1px solid #C7C6FF;
-			border-bottom:5px solid #C7C6FF;
-			border-right:4px solid #C7C6FF;
-			
-		}
-		.errorContent{
-			margin:0px 0;
-			padding:0px 0px 0px 0px;
-			border:0px solid #ccc;
-		}
-		.errorContent span{
-			font-size:14px;
-			padding:0px 0px 0px 0px;
-		}
-		.errorButton{
-			width:100%;
-			text-align:center;
-		}
-		.errorButton img{
-			border:none;
-			margin:0 14px;
-		}
-		input.btn_img{
-			border:1px solid #ccc;
-			text-align:center;
-			background:#fff;
-			color:#0066cc;
-			height:22px;
-			margin-left:5px;
-		}  
-		.topSpan{
-			font-family:맑은 고딕,Verdana;
-			font-size:13pt;
-			color:#72A6D7;
-			padding:0px 0px 0px 10px;		
-		}
-		.bottomSpan{
-			font-family:맑은 고딕,Verdana;
-			font-size:11pt;
-			color:#9D8FF8;
-			padding:0px 0px 10px 10px;		
-		}
-		.imageDiv{
-			width:510px;
-		}
-		.msgTD{
-			width:370px;
-			background:#005EB8;
-			color:#FFFFFF;
-			padding:0px 0px 0px 30px;		
-		}
-		.hiddenSpan{
-			width:905px;
-			font-family:맑은 고딕,Verdana;
-			font-size:10.5pt;
-			background:#FF0000;
-			color:#FFFFFF;
-			padding:10px 0px 10px 10px;
-			line-height: 1.8em;
-			letter-spacing: 0.03em;
-			display:none;
-			
-		}		
-		.linktitle{color:#ffffff;font-size:14px;font-family:'맑은 고딕';;font-weight:bold}
-	</style>
-	<script language='javascript'>
-		function endConnect(){
-			//접속 종료 코드
+<!--2022.10.19. Initial Added from html and css  https://www.codinglabweb.com/2020/12/animated-alert-box-using-html-css-only.html-->
+
+<!DOCTYPE html>
+<html>
+<!--2022.10.20. guns Edit Script (Windows Loading)-->
+<script>
+	
+	window.onload=function(){
+	setTimeout(function(){
+	document.getElementById("check").click();
+	}, 70);
+	};
+	function endConnect(){
+		//접속 종료 코드
+		window.open('https://portal.doosan.com', '_self', ''); 
+	}
+	function viewHidden(){
+		var obj = document.getElementById('hiddenMsg');
+		
+		if(obj.style.opacity == 0){
+			obj.style.background = '#FF4848';
+			obj.style.width = '750px';
+			obj.style.opacity = 1;
+			obj.style.color = '#fff';
+			obj.style.pointerEvents = 'auto';
+			obj.style.transform = "translate(-50% , -50%) scale(1)";
+		}else{
+			obj.style.pointerEvents = 'none';
+			obj.style.opacity = 0;
 		}
 		
-		function viewHidden(){
-			var obj = document.getElementById('hiddenMsg');
-			
-			if(obj.style.display == 'none' || obj.style.display == ''){
-				obj.style.display = "block";
-			}else{
-				obj.style.display = "none";
-			}
-			
-		}
-		
-		function goConnect(){
-			//사이트 접속 코드
-		}
-	</script>
-	<BODY>
-		<center>
-			<div id="error_wrap">
-				<div class="topSpan">
-					<b>Doosan Safelink</b>
-				</div>
+	}
+	function goConnect(queryURL){
+		//사이트 접속 코드
+		alert('접속하기');
+		window.location.replace(queryURL);
+		window.open(queryURL, '_self', ''); 
+	}	
+
+
+</script>
+<!--2022.10.20. guns Edit Script (Windows Loading)-->
+<head>
+<meta charset="utf-8">
+<title>Doosan Enerbility Safe Link (보안링크) <br></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+	<body>
+		<div class="container">
+			<input type="checkbox" id="check">
+			<div class="background"></div>
+			<div class="alert_box" id='mainbox'>
 				<div class="errorContent">	
-					<table>
+					<font class="topSpan"><b>Doosan Safelink</b></font>
+					<table width="880px" style="table-layout:fixed;word-break: break-all">
 						<tr> 
 							<td width='510px'>
-								<img src="../images/main.gif"/>
+								<img src="/images/main.gif"/>
+								<font class='bottomSpan'><b>회사는 이메일 링크를 통해 계정/패스워드 입력을 요구하지 않습니다.</b></font>
 							</td>
-							<td class='msgTD' valign='bottom'>
-								<font style='font-size:18pt;'><b>&nbsp;웹사이트 접속 주의 !&nbsp;</b></font>
+							<td class='msgTD' valign='bottom' width="370px">
+								<font style='font-size:16pt;'><b>웹사이트 접속 주의 !</b></font>
 								</br>
 								</br>
 								</br>
 								</br>
-								<font style='font-size:12pt;line-height:2em;'>&nbsp;&nbsp;접속하려는 사이트</br></font>
-								<font style='font-size:18pt;'><b>"portal.dusan.com"</b></font>
+								<font style='font-size:12pt;line-height:2em;'>접속하려는 사이트</br></font>
+								<font style='font-size:22pt;'>"<b>portalxxx.dusanxxxx.com</b>"</font>
 								<font style='font-size:12pt;line-height:2em;'>
-									은</br>&nbsp;&nbsp;회사가 관리하는 사이트가 아닙니다.
+									</br>회사가 관리하는 사이트가 아닙니다.
 								</font>	
 								</br>
 								</br>
 								</br>
-								</br>								
-								<img src="../images/end.png" style='cursor:pointer' onclick='javascript:endConnect()'/>
-								</br>
-								</br>
+								<div class="btns">
+									<label onclick="endConnect();return false;" for="check"><b>접속 종료</b></label>
+								</div>
 								</br>								
 								</br>
 								</br>								
@@ -140,23 +84,26 @@
 						</tr>
 					</table>	
 				</div>
-				<div class="bottomSpan">
-					<font><b>회사는 이메일 링크를 통해 계정/패스워드 입력을 요구하지 않습니다.</b></font>
-				</div>
-				<div id='hiddenMsg' class="hiddenSpan">
-					<font>
-					방금 전, 클릭하신 이메일 링크는 회사에서 운영하거나 관리하는 사이트가 아닙니다.</br>
-					접속에 주의를 해주시기 바라며, 회사에서는 이메일 링크를 통해 패스워드 변경이나 계정 입력을 요구하지 않으니,</br>
-					아이디/패스워드가 유출되지 않도록 해주시기 바랍니다. (문의: de.security@doosan.com)</br>
-					위 내용을 충분히 인지하셨다면, 접속 버튼을 눌러 사이트에 접속해주시기 바랍니다.</font>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;<img src="../images/connect.png" style='cursor:pointer' onclick='javascript:goConnect()'/>
+			</div>
+		</div>
+		<div class="container">
+			
+			<div id='hiddenMsg' class="alert_box">
+				<font class='hiddenSpan'><b>
+				클릭하신 이메일 링크는 회사에서 운영하거나 관리하는 사이트가 아닙니다.</br>
+				회사에서는 이메일 링크를 통해 패스워드 변경이나 계정 입력을 요구하지 않으니,</br>
+				아이디/패스워드 정보가 유출되지 않도록 주의해 주시기 바랍니다.</b></br>
+				(문의: de.security@doosan.com)</br></br><b>
+				위 내용을 충분히 인지하시고 접속에 주의하시길 바랍니다.</br></br></b></font>
+				<font class='hiddenBSpan'><b>
+				"portalxxx.dusanxxxxx.com" 접속주의</br></b></font>
+				
+				<div class="btns2">
+					<label onclick="goConnect('url입력')" for="check">계속 접속</label>
+					<label onclick="endConnect();return false;" for="check"><b>접속 종료</b></label>
 				</div>
 				
-			</div>
-		</center>
-	</BODY>
-</HTML>
-
-
+			</div>				
+		</div>	
+	</body>
+</html>
