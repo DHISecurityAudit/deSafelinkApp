@@ -32,14 +32,13 @@
 	}
 	function goConnect(queryURL){
 		//사이트 접속 코드
-		alert('접속하기');
 		window.location.replace(queryURL);
 		window.open(queryURL, '_self', ''); 
 	}	
 
 
 </script>
-<!--2022.10.20. guns Edit Script (Windows Loading)-->
+
 <head>
 <meta charset="utf-8">
 <title>Doosan Enerbility Safe Link (보안링크) <br></title>
@@ -59,13 +58,13 @@
 								<font class='bottomSpan'><b>회사는 이메일 링크를 통해 계정/패스워드 입력을 요구하지 않습니다.</b></font>
 							</td>
 							<td class='msgTD' valign='bottom' width="370px">
-								<font style='font-size:16pt;'><b>웹사이트 접속 주의 !</b></font>
+								<font style='font-size:16pt;'><b>웹사이트 접속 주의</b></font>
 								</br>
 								</br>
 								</br>
 								</br>
 								<font style='font-size:12pt;line-height:2em;'>접속하려는 사이트</br></font>
-								<font style='font-size:22pt;'>"<b>portalxxx.dusanxxxx.com</b>"</font>
+								<font style='font-size:22pt;'>"<b><%= reqDomain %></b>"</font> <!-- Guns 2023-04-27 reqDomain 변수추가 -->
 								<font style='font-size:12pt;line-height:2em;'>
 									</br>회사가 관리하는 사이트가 아닙니다.
 								</font>	
@@ -78,7 +77,7 @@
 								</br>								
 								</br>
 								</br>								
-								<div align='right' style='padding-right:20px'><a href='javascript:viewHidden();' class='linktitle'>세부정보 보기</a></div>
+								<div align='right' style='padding-right:20px'><a href='javascript:viewHidden();' class='linktitle'>계속 접속 하기</a></div>
 								</br>
 							</td>
 						</tr>
@@ -96,10 +95,10 @@
 				(문의: de.security@doosan.com)</br></br><b>
 				위 내용을 충분히 인지하시고 접속에 주의하시길 바랍니다.</br></br></b></font>
 				<font class='hiddenBSpan'><b>
-				"portalxxx.dusanxxxxx.com" 접속주의</br></b></font>
+					<%= reqDomain %></br></b></font> <!-- Guns 2023-04-27 reqDomain 변수추가 -->
 				
 				<div class="btns2">
-					<label onclick="goConnect('url입력')" for="check">계속 접속</label>
+					<label onclick="goConnect('<%- reqUrl %>')" for="check">계속 접속</label>
 					<label onclick="endConnect();return false;" for="check"><b>접속 종료</b></label>
 				</div>
 				
