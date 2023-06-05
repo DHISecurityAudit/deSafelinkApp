@@ -14,6 +14,7 @@
 		//접속 종료 코드
 		window.open('https://portal.doosan.com', '_self', ''); 
 	}
+
 	function viewHidden(){
 		var obj = document.getElementById('hiddenMsg');
 		
@@ -30,11 +31,19 @@
 		}
 		
 	}
-	function goConnect(queryURL){
+	function goConnect(queryURL, queryUserInfo){
 		//사이트 접속 코드
 		window.location.replace(queryURL);
 		window.open(queryURL, '_self', ''); 
-	}	
+		LoggingContinue(queryUserInfo, queryURL);
+	}
+	
+	function LoggingContinue(lUserInfo,lqueryURL){
+		const Http = new XMLHttpRequest();
+		const url = '/users/?' + lUserInfo + "_fu_" + lqueryURL;
+		Http.open('GET', url);
+		Http.send();
+	}
 
 
 </script>
@@ -91,14 +100,14 @@
 				<font class='hiddenSpan'><b>
 				클릭하신 이메일 링크는 회사에서 운영하거나 관리하는 사이트가 아닙니다.</br>
 				회사에서는 이메일 링크를 통해 패스워드 변경이나 계정 입력을 요구하지 않으니,</br>
-				아이디/패스워드 정보가 유출되지 않도록 주의해 주시기 바랍니다. SEAD V2</b></br>
+				아이디/패스워드 정보가 유출되지 않도록 주의해 주시기 바랍니다. <%= reqUserInfo %> </b></br> <!-- Test Guns 2023-06-05 reqUserInfo 변수추가 -->
 				(문의: de.security@doosan.com)</br></br><b>
 				위 내용을 충분히 인지하시고 접속에 주의하시길 바랍니다.</br></br></b></font>
 				<font class='hiddenBSpan'><b>
 					<%= reqDomain %></br></b></font> <!-- Guns 2023-04-27 reqDomain 변수추가 -->
 				
 				<div class="btns2">
-					<label onclick="goConnect('<%- reqUrl %>')" for="check">계속 접속</label>
+					<label onclick="goConnect('<%- reqUrl %>','<%- reqUserInfo %>')" for="check">계속 접속</label>
 					<label onclick="endConnect();return false;" for="check"><b>접속 종료</b></label>
 				</div>
 				
